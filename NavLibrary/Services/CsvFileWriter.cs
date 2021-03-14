@@ -27,7 +27,7 @@ namespace NavLibrary
             bool firstColumn = true;
             foreach (string value in row)
             {
-                // Add separator if this isn't the first value
+                // Add separator if this isn't the firsCt value
                 if (!firstColumn)
                     builder.Append(',');
                 // Implement special handling for values that contain comma or quote

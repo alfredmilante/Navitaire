@@ -6,6 +6,7 @@ namespace NavLibrary.Models
 {
     public class Passenger
     {
+        public string PNR { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime BirthDate { get; set; }
@@ -13,7 +14,11 @@ namespace NavLibrary.Models
         {
             get
             {
-                return ((BirthDate.Date - DateTime.Now.Date).Days) / 365;
+                var age = DateTime.Now.Year - BirthDate.Year;
+
+                if (BirthDate.Date > DateTime.Now.AddYears(-age)) age--;
+
+                return age;
             }
         }
     }
